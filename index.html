@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MostafaAlrawi</title>
     <style>
         /* تنسيق عام */
@@ -24,10 +24,10 @@
         .container {
             background-color: #1c1c1c; /* خلفية داكنة داخلية */
             border-radius: 15px;
-            padding: 50px; /* تم زيادة padding لزيادة الحجم */
+            padding: 30px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            max-width: 500px; /* تم زيادة الحجم إلى 500px */
-            width: 100%;
+            max-width: 500px;
+            width: 90%; /* ليتناسب مع الشاشات الصغيرة */
             opacity: 0;
             transform: translateY(-50px);
             animation: slideIn 1s forwards ease-out;
@@ -45,8 +45,8 @@
         }
 
         img.profile {
-            width: 200px; /* تم تكبير الصورة */
-            height: 200px; /* تم تكبير الصورة */
+            width: 150px; /* تقليص حجم الصورة */
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -64,18 +64,18 @@
         }
 
         h2 {
-            font-size: 30px; /* تم تكبير الخط */
+            font-size: 26px; /* تصغير الخط */
             margin-top: 20px;
-            color: #ff9800; /* لون ذهبي */
+            color: #ff9800;
             letter-spacing: 1px;
             text-shadow: 0 0 10px rgba(255, 152, 0, 0.8), 0 0 20px rgba(255, 152, 0, 0.6), 0 0 30px rgba(255, 152, 0, 0.4);
             transition: all 0.3s ease-in-out;
         }
 
         h2:hover {
-            color: #ffffff; /* تغيير اللون إلى الأبيض */
+            color: #ffffff;
             text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6);
-            transform: scale(1.1); /* تكبير النص قليلاً */
+            transform: scale(1.1);
             cursor: pointer;
         }
 
@@ -97,22 +97,22 @@
 
         /* تنسيق روابط التواصل الاجتماعي */
         .social-links {
-            margin-top: 40px; /* تم زيادة المسافة */
+            margin-top: 20px;
         }
 
         .social-links a {
-            margin: 0 15px; /* تم زيادة المسافة بين الأيقونات */
+            margin: 0 10px; /* تقليص المسافة */
             display: inline-block;
-            width: 60px; /* تم تكبير الأيقونات */
-            height: 60px; /* تم تكبير الأيقونات */
+            width: 50px; /* تقليص حجم الأيقونات */
+            height: 50px;
             background-color: transparent;
             border-radius: 50%;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .social-links img {
-            width: 50px; /* تم تكبير الأيقونات */
-            height: 50px; /* تم تكبير الأيقونات */
+            width: 40px; /* تقليص حجم الأيقونات */
+            height: 40px;
             border-radius: 50%;
             transition: filter 0.3s, transform 0.3s;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
@@ -126,7 +126,35 @@
 
         .social-links a:active img {
             transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 3px 10px rgba(255, 165, 0, 0.6); /* ظلال برتقالية */
+            box-shadow: 0 3px 10px rgba(255, 165, 0, 0.6);
+        }
+
+        /* استعلامات الوسائط لتحسين العرض على الهواتف */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .social-links a {
+                margin: 0 5px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .social-links img {
+                width: 35px;
+                height: 35px;
+            }
+
+            img.profile {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
@@ -134,19 +162,15 @@
 
     <!-- المحتوى -->
     <div class="container">
-
         <h2>Mostafa-Alrawi</h2>
-        
         <h2>MR7</h2>
 
-        <img style="width: 5cap;" src="France.png" alt="فيسبوك">
+        <img style="width: 150px;" src="France.png" alt="فيسبوك">
         <br><br>
-        <img style="width: 4cap;" src="Realmadrid.png" alt="فيسبوك">
-
+        <img style="width: 120px;" src="Realmadrid.png" alt="فيسبوك">
         <br><br>
         
         <img src="MY.png" alt="صورة شخصية" class="profile" onclick="openImage(this.src)">
-
 
         <!-- روابط التواصل الاجتماعي -->
         <div class="social-links">
