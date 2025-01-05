@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MostafaAlrawi</title>
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #121212; /* أسود مطفي */
+            color: #fff; /* النص باللون الأبيض */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .container {
+            background-color: #1c1c1c; /* خلفية داكنة داخلية */
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%; /* ليتناسب مع الشاشات الصغيرة */
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideIn 1s forwards ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        img.profile {
+            width: 150px; /* تقليص حجم الصورة */
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        img.profile:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        img.profile:active {
+            transform: rotate(360deg) scale(1.5);
+            transition: transform 0.6s ease;
+        }
+
+        h2 {
+            font-size: 26px; /* تصغير الخط */
+            margin-top: 20px;
+            color: #ff9800;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 152, 0, 0.8), 0 0 20px rgba(255, 152, 0, 0.6), 0 0 30px rgba(255, 152, 0, 0.4);
+            transition: all 0.3s ease-in-out;
+        }
+
+        h2:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        h2:active {
+            animation: sparkle 0.5s linear;
+        }
+
+        @keyframes sparkle {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* تنسيق روابط التواصل الاجتماعي */
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 10px; /* تقليص المسافة */
+            display: inline-block;
+            width: 50px; /* تقليص حجم الأيقونات */
+            height: 50px;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-links img {
+            width: 40px; /* تقليص حجم الأيقونات */
+            height: 40px;
+            border-radius: 50%;
+            transition: filter 0.3s, transform 0.3s;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-links a:hover img {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+        }
+
+        .social-links a:active img {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 3px 10px rgba(255, 165, 0, 0.6);
+        }
+
+        /* استعلامات الوسائط لتحسين العرض على الهواتف */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .social-links a {
+                margin: 0 5px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .social-links img {
+                width: 35px;
+                height: 35px;
+            }
+
+            img.profile {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- المحتوى -->
+    <div class="container">
+        <h2>Mostafa-Alrawi</h2>
+        <h2>MR7</h2>
+
+        <img style="width: 150px;" src="France.png" alt="فيسبوك">
+        <br><br>
+        <img style="width: 120px;" src="Realmadrid.png" alt="فيسبوك">
+        <br><br>
+        
+        <img src="MY.png" alt="صورة شخصية" class="profile" onclick="openImage(this.src)">
+
+        <!-- روابط التواصل الاجتماعي -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/15ax2AtfjV/?mibextid=wwXIfr" target="_blank">
+                <img src="Facebook.png" alt="فيسبوك">
+            </a>
+            <a href="https://snapchat.com/t/ZyByAptb" target="_blank">
+                <img src="Snapchat.png" alt="سناب شات">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="instagram.png" alt="إنستغرام">
+            </a>
+            <a href="https://www.linkedin.com/in/mostafa-alrawi-345839165?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                <img src="LinkedIn.png" alt="لينكدإن">
+            </a>
+            <!-- أيقونة رقم الهاتف -->
+            <a href="tel:+9647710321666" title="اتصل الآن">
+                <img src="Number.png" alt="اتصل بنا">
+            </a>
+            <!-- أيقونة تلكرام -->
+            <a href="https://t.me/MostafaAlrawi" target="_blank" title="تلغرام">
+                <img src="Telegram.png" alt="تلغرام">
+            </a>
+            <!-- أيقونة واتساب -->
+            <a href="https://wa.me/9647710321666" target="_blank" title="واتساب">
+                <img src="whatsapp.png" alt="واتساب">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function openImage(src) {
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+            overlay.style.zIndex = '1000';
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90%';
+            img.style.borderRadius = '15px';
+            img.style.boxShadow = '0 5px 20px rgba(255, 255, 255, 0.5)';
+            img.style.cursor = 'pointer';
+
+            img.onclick = function() {
+                document.body.removeChild(overlay);
+            };
+
+            overlay.appendChild(img);
+            document.body.appendChild(overlay);
+        }
+
+        // إظهار المحتوى بعد تحميل الصفحة
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.container').style.opacity = 1;
+            }, 1000);
+        };
+    </script>
+
+</body>
+</html>
